@@ -195,6 +195,42 @@
         )
       )
     )
+    (symbol "EESTN5:R" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "R" (at -1.27 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "R" (at 1.27 0 90)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.524 1.524)))
+      )
+      (property "Datasheet" "" (at 0 0 0)
+        (effects (font (size 1.524 1.524)))
+      )
+      (property "ki_description" "Resistor" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "RES* R_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "R_0_1"
+        (rectangle (start 0.508 1.27) (end -0.508 -1.27)
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "R_1_1"
+        (pin passive line (at 0 2.54 270) (length 1.27)
+          (name "~" (effects (font (size 1.524 1.524))))
+          (number "1" (effects (font (size 1.524 1.524))))
+        )
+        (pin passive line (at 0 -2.54 90) (length 1.27)
+          (name "~" (effects (font (size 1.524 1.524))))
+          (number "2" (effects (font (size 1.524 1.524))))
+        )
+      )
+    )
     (symbol "Librerias:ESP32-DEVKIT-V1-30pines" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
       (property "Reference" "U2" (at 0 32.258 0)
         (effects (font (size 1.27 1.27)))
@@ -921,6 +957,9 @@
     )
   )
 
+  (junction (at 88.9 31.75) (diameter 0) (color 0 0 0 0)
+    (uuid 0c5167a2-ceb7-4ec9-b987-9b1bf3954608)
+  )
   (junction (at 191.897 53.1114) (diameter 0) (color 0 0 0 0)
     (uuid 15330fb8-5352-47ed-9a8a-174b54407e7b)
   )
@@ -935,6 +974,12 @@
   )
   (junction (at 215.519 42.9514) (diameter 0) (color 0 0 0 0)
     (uuid 63bf83b5-224b-4f31-8951-eeed03a4ff17)
+  )
+  (junction (at 88.9 48.26) (diameter 0) (color 0 0 0 0)
+    (uuid 8c4a41cb-7588-49e3-8f17-bd39f907001a)
+  )
+  (junction (at 88.9 63.5) (diameter 0) (color 0 0 0 0)
+    (uuid d71175ee-70eb-44b9-a984-c42e480785a7)
   )
   (junction (at 215.519 53.1114) (diameter 0) (color 0 0 0 0)
     (uuid eb074c83-7fbc-43fa-864a-57c40767eb8c)
@@ -982,9 +1027,17 @@
     (uuid 0f6ce69f-4d00-46f9-8a89-ce0538e159da)
   )
 
+  (wire (pts (xy 85.09 31.75) (xy 88.9 31.75))
+    (stroke (width 0) (type default))
+    (uuid 134260ee-9cab-4f7a-942f-4a48409a7375)
+  )
   (wire (pts (xy 185.547 53.1114) (xy 191.897 53.1114))
     (stroke (width 0) (type default))
     (uuid 152968bc-9985-4a36-b9ab-1cdecc69e801)
+  )
+  (wire (pts (xy 88.9 63.5) (xy 90.17 63.5))
+    (stroke (width 0) (type default))
+    (uuid 15a7eef2-2c2e-43bd-b103-688f53db4f4c)
   )
   (wire (pts (xy 30.5816 47.4726) (xy 30.5816 50.8))
     (stroke (width 0) (type default))
@@ -1005,6 +1058,10 @@
   (wire (pts (xy 154.5082 50.9778) (xy 158.3182 50.9778))
     (stroke (width 0) (type default))
     (uuid 1fa1e111-7421-45ee-9d65-c6beb24fe62d)
+  )
+  (wire (pts (xy 88.9 48.26) (xy 90.17 48.26))
+    (stroke (width 0) (type default))
+    (uuid 1fb67ffc-45c5-4166-86b3-17527b3c8af1)
   )
   (wire (pts (xy 185.3438 81.788) (xy 185.3438 84.5312))
     (stroke (width 0) (type default))
@@ -1030,6 +1087,10 @@
     (stroke (width 0) (type default))
     (uuid 29db1395-a719-4523-b21c-044b69a1d201)
   )
+  (wire (pts (xy 96.52 48.26) (xy 96.52 50.8))
+    (stroke (width 0) (type default))
+    (uuid 2d77b293-2324-414c-a879-d541ba2cc41b)
+  )
   (polyline (pts (xy 232.4354 112.1918) (xy 284.8356 112.1918))
     (stroke (width 0) (type default))
     (uuid 321185a6-f9f1-4042-9e5b-1f846228ebe8)
@@ -1039,6 +1100,10 @@
     (uuid 339e9438-65f9-4e1f-b2ae-ab3d87efce9b)
   )
 
+  (wire (pts (xy 96.52 31.75) (xy 96.52 34.29))
+    (stroke (width 0) (type default))
+    (uuid 37c45db8-812f-4b80-b8d3-e7f613c05d37)
+  )
   (wire (pts (xy 250.9774 49.3776) (xy 253.6698 49.3776))
     (stroke (width 0) (type default))
     (uuid 4032edb0-8586-421c-b3e2-e889adb4ddb6)
@@ -1108,11 +1173,19 @@
     (stroke (width 0) (type default))
     (uuid 5b854c06-ba91-4f68-bf86-a9b63d440a05)
   )
+  (wire (pts (xy 88.9 27.94) (xy 88.9 31.75))
+    (stroke (width 0) (type default))
+    (uuid 5c1828ea-8179-4754-a9b8-cf8208f5e061)
+  )
   (wire (pts (xy 215.519 42.9514) (xy 221.107 42.9514))
     (stroke (width 0) (type default))
     (uuid 5e5d13e8-048f-4001-9f46-cb9c18cb7a56)
   )
-  (wire (pts (xy 76.3778 64.1096) (xy 76.3778 65.2526))
+  (wire (pts (xy 85.09 63.5) (xy 88.9 63.5))
+    (stroke (width 0) (type default))
+    (uuid 6261db12-e14d-415e-b0f7-a12e06883a6e)
+  )
+  (wire (pts (xy 73.279 62.357) (xy 73.279 63.5))
     (stroke (width 0) (type default))
     (uuid 62ea7cf1-444d-4f92-9202-598ce093fefa)
   )
@@ -1133,7 +1206,7 @@
     (uuid 6dd57c7a-1a0d-4f35-a76f-24663270c58d)
   )
 
-  (wire (pts (xy 76.1492 38.5318) (xy 77.8002 38.5318))
+  (wire (pts (xy 73.279 31.75) (xy 74.93 31.75))
     (stroke (width 0) (type default))
     (uuid 6e48b7c8-a9b8-481d-9657-e561fd63334f)
   )
@@ -1144,6 +1217,14 @@
   (wire (pts (xy 210.947 42.9514) (xy 215.519 42.9514))
     (stroke (width 0) (type default))
     (uuid 749a4503-3449-4788-ba24-e5285299b668)
+  )
+  (wire (pts (xy 88.9 31.75) (xy 90.17 31.75))
+    (stroke (width 0) (type default))
+    (uuid 74fb29d7-1f81-444b-b03c-d75aaa1c67e9)
+  )
+  (wire (pts (xy 96.52 63.5) (xy 96.52 66.04))
+    (stroke (width 0) (type default))
+    (uuid 78946bee-303d-438f-99d6-5f62f8b543d8)
   )
   (polyline (pts (xy 232.41 12.7) (xy 232.4354 112.1664))
     (stroke (width 0) (type default))
@@ -1178,7 +1259,7 @@
     (stroke (width 0) (type default))
     (uuid 847982ac-f532-4158-80c7-63f91f422cc5)
   )
-  (wire (pts (xy 76.1746 49.911) (xy 76.1746 51.054))
+  (wire (pts (xy 73.279 47.117) (xy 73.279 48.26))
     (stroke (width 0) (type default))
     (uuid 8a9a7917-2bb8-40f2-8774-c3ce4ec1d444)
   )
@@ -1247,6 +1328,10 @@
     (stroke (width 0) (type default))
     (uuid a8de9443-c3e3-4739-9c7c-4126dade22d4)
   )
+  (wire (pts (xy 85.09 48.26) (xy 88.9 48.26))
+    (stroke (width 0) (type default))
+    (uuid aab1e6c2-79bc-4655-b90e-81ad575a9e1a)
+  )
   (polyline (pts (xy 174.5996 112.1918) (xy 232.41 112.2172))
     (stroke (width 0) (type default))
     (uuid ab1ad1d5-782f-41bf-9133-87a1a381d8c5)
@@ -1283,7 +1368,7 @@
     (uuid bde1c5c9-ec9e-43f8-9e04-385a56815689)
   )
 
-  (wire (pts (xy 76.3778 65.2526) (xy 78.0288 65.2526))
+  (wire (pts (xy 73.279 63.5) (xy 74.93 63.5))
     (stroke (width 0) (type default))
     (uuid bf337c6e-5f6d-449e-b734-036102eb770e)
   )
@@ -1329,6 +1414,10 @@
     (stroke (width 0) (type default))
     (uuid df616247-8f99-4545-96af-e0efc3256a12)
   )
+  (wire (pts (xy 88.9 59.69) (xy 88.9 63.5))
+    (stroke (width 0) (type default))
+    (uuid e40a7b36-c23b-4491-b5a0-cc107048da58)
+  )
   (wire (pts (xy 30.5054 69.0626) (xy 30.5054 72.39))
     (stroke (width 0) (type default))
     (uuid e538b891-e67a-4014-8e5f-d864f72c2edd)
@@ -1358,11 +1447,15 @@
     (stroke (width 0) (type default))
     (uuid ef369fb6-14b4-444d-aa67-bdf0ff6453cc)
   )
+  (wire (pts (xy 95.25 63.5) (xy 96.52 63.5))
+    (stroke (width 0) (type default))
+    (uuid ef597746-5066-4153-a46b-7543c767f42f)
+  )
   (wire (pts (xy 20.6502 36.2712) (xy 20.6502 31.75))
     (stroke (width 0) (type default))
     (uuid ef9a6098-9795-431c-a4e0-16fd95e66f38)
   )
-  (wire (pts (xy 76.1746 51.054) (xy 77.8256 51.054))
+  (wire (pts (xy 73.279 48.26) (xy 74.93 48.26))
     (stroke (width 0) (type default))
     (uuid efbd6446-25af-440a-992e-c7679a9cde17)
   )
@@ -1382,13 +1475,25 @@
     (stroke (width 0) (type default))
     (uuid f288f020-af5a-4407-a06d-dae1467ab82a)
   )
-  (wire (pts (xy 76.1492 37.3888) (xy 76.1492 38.5318))
+  (wire (pts (xy 88.9 44.45) (xy 88.9 48.26))
+    (stroke (width 0) (type default))
+    (uuid f4c32248-6070-4ebe-b4cb-9bc73ba2047b)
+  )
+  (wire (pts (xy 95.25 48.26) (xy 96.52 48.26))
+    (stroke (width 0) (type default))
+    (uuid f6d7eb52-3ec9-4967-a06c-206764cf8d2d)
+  )
+  (wire (pts (xy 73.279 30.607) (xy 73.279 31.75))
     (stroke (width 0) (type default))
     (uuid f7ca9cba-b2f0-49a7-a8cd-11c9a451bffb)
   )
   (wire (pts (xy 185.547 51.8414) (xy 185.547 53.1114))
     (stroke (width 0) (type default))
     (uuid fb31beed-5680-4c42-8fa3-067ca6988a4b)
+  )
+  (wire (pts (xy 95.25 31.75) (xy 96.52 31.75))
+    (stroke (width 0) (type default))
+    (uuid fc0b8e07-c959-4546-b088-92bc559ebb72)
   )
 
   (image (at 140.3604 107.4928) (scale 0.811603)
@@ -12157,10 +12262,6 @@
     (uuid ff377cbc-6042-46e6-9644-84dbcdaf714a)
   )
 
-  (label "BOTON" (at 87.9602 38.5318 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 06a7fa6b-63eb-413a-bc5d-bfd12812613c)
-  )
   (label "BOTON" (at 120.0404 38.2778 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 09707989-d9d8-4b32-9119-b996b6b45704)
@@ -12205,10 +12306,6 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 545b773f-4239-403c-93a6-581830ae2724)
   )
-  (label "BOTON2" (at 87.9856 51.054 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 5a48095e-a4cd-46aa-8a72-ab2c6654f0db)
-  )
   (label "IN2" (at 249.0978 41.7576 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 6106c9b8-d804-48c4-ab2e-63e0000125fb)
@@ -12225,13 +12322,13 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 780f6f49-4a52-427b-bf4e-d222c3da18c7)
   )
+  (label "BOTON3" (at 88.9 59.69 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 7861bd4a-dce6-4077-9367-c884bda2aa93)
+  )
   (label "SCL" (at 158.3182 38.2778 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 796fea3f-f71a-43b6-b40c-0b067f1f3ab6)
-  )
-  (label "BOTON3" (at 88.1888 65.2526 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 7f477967-669d-44df-9bee-a3c6eaa5a72d)
   )
   (label "ECCHO_1" (at 120.2182 56.0578 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
@@ -12273,9 +12370,17 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid bfc67a6a-8f3c-406a-bd1a-4ae64867c049)
   )
+  (label "BOTON" (at 88.9 27.94 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid c664f2e7-5190-411d-84ef-5634cead87d3)
+  )
   (label "TRIGG_2" (at 120.2182 53.5178 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid ceba8acd-ce2e-454f-bda9-aa7f061a3286)
+  )
+  (label "BOTON2" (at 88.9 44.45 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid cffd2063-a08b-4d8f-949d-cfa439385148)
   )
   (label "ECCHO_3" (at 30.5816 77.47 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
@@ -12312,7 +12417,7 @@
     (pin "1" (uuid 463ad343-37a9-4836-a01b-9984d5093898))
     (pin "2" (uuid 00f64342-635b-4468-8cb9-2e06e4691e33))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "C2") (unit 1)
         )
@@ -12347,7 +12452,7 @@
     (pin "2" (uuid 3795437c-b019-4123-9d1c-7201d3b24ed5))
     (pin "3" (uuid 9d66d7cf-9fef-4f43-8b93-fd4e76214e0d))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "P4") (unit 1)
         )
@@ -12413,7 +12518,7 @@
     (pin "8" (uuid 71b0d623-3f94-426f-ab9d-32af0b618c9b))
     (pin "9" (uuid ad4217e2-9659-4343-8d2e-280008208dc3))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "U2") (unit 1)
         )
@@ -12438,7 +12543,7 @@
     )
     (pin "1" (uuid e6e7aea6-815e-4193-b688-7be645c24e10))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR04") (unit 1)
         )
@@ -12462,7 +12567,7 @@
       (effects (font (size 1.524 1.524)) hide)
     )
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "H2") (unit 1)
         )
@@ -12487,7 +12592,7 @@
     )
     (pin "1" (uuid c2c597e3-5e15-479b-ab99-e284e83a15a7))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR017") (unit 1)
         )
@@ -12518,7 +12623,7 @@
     (pin "3" (uuid 67a67657-4a85-46c5-ac2c-d87d6367b89d))
     (pin "4" (uuid 4171d0e8-89da-4903-9036-4932a2af866f))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "P3") (unit 1)
         )
@@ -12543,7 +12648,7 @@
     )
     (pin "1" (uuid 7dd9a88e-bc0a-4b0d-991d-9d5e9727f7fb))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR012") (unit 1)
         )
@@ -12568,7 +12673,7 @@
     )
     (pin "1" (uuid 8d376376-74f7-4e84-8d60-d0297875c15e))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR09") (unit 1)
         )
@@ -12592,7 +12697,7 @@
       (effects (font (size 1.524 1.524)) hide)
     )
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "H3") (unit 1)
         )
@@ -12617,7 +12722,7 @@
     )
     (pin "1" (uuid bb8c0081-c1e0-4155-a510-a51a9a2c2753))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR011") (unit 1)
         )
@@ -12642,7 +12747,7 @@
     )
     (pin "1" (uuid 7974d089-290e-4137-a567-179bef1519de))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR01") (unit 1)
         )
@@ -12668,7 +12773,7 @@
     (pin "1" (uuid 8c12a42a-168f-49ca-ac23-293cf57e0041))
     (pin "2" (uuid 362ac113-4eaa-45fb-a767-4acf5dd100f6))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "C1") (unit 1)
         )
@@ -12676,6 +12781,37 @@
       (project "PCB-Mando-Radiocontrol"
         (path "/a09d701e-8048-4e72-8e3a-cb0f8f921380"
           (reference "C1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "EESTN5:R") (at 92.71 63.5 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 33a29a09-b9d8-4010-ac50-c8a4950845fd)
+    (property "Reference" "R1" (at 92.71 59.69 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1OK" (at 92.71 61.595 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "EESTN5:R_1206" (at 92.71 63.5 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (property "Datasheet" "" (at 92.71 63.5 0)
+      (effects (font (size 1.524 1.524)))
+    )
+    (pin "1" (uuid b5079048-ca07-4465-830d-53a0a3f1a472))
+    (pin "2" (uuid 8b642bac-f7b2-4290-9574-4b4c182af23e))
+    (instances
+      (project "G2_PCB_V1"
+        (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
+          (reference "R1") (unit 1)
+        )
+      )
+      (project "Esp32Modulo"
+        (path "/d8ce7d9a-219e-40d1-b957-d72bdccbdc30"
+          (reference "R3") (unit 1)
         )
       )
     )
@@ -12697,7 +12833,7 @@
       (effects (font (size 1.524 1.524)) hide)
     )
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "H4") (unit 1)
         )
@@ -12722,7 +12858,7 @@
     )
     (pin "1" (uuid 34baff14-2f77-47f2-9061-d81c397c6dfd))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR0113") (unit 1)
         )
@@ -12730,25 +12866,55 @@
     )
   )
 
-  (symbol (lib_id "EESTN522:SW_Push") (at 82.8802 38.5318 0) (unit 1)
+  (symbol (lib_id "power:GND") (at 96.52 66.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 4c63e1c9-1b6e-45d1-a05e-0997c4951d6e)
-    (property "Reference" "SW2" (at 82.8802 32.8168 0)
+    (uuid 48bd9549-9e38-4137-809a-73182d7fe53e)
+    (property "Reference" "#PWR025" (at 96.52 72.39 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 96.52 71.12 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SW_Push" (at 82.8802 40.0558 0)
+    (property "Footprint" "" (at 96.52 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "EESTN5:Pin_Header_2" (at 82.8802 33.4518 0)
+    (property "Datasheet" "" (at 96.52 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 82.8802 33.4518 0)
+    (pin "1" (uuid f9b057e7-9ad7-4c8f-a665-42e149cca86a))
+    (instances
+      (project "G2_PCB_V1"
+        (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
+          (reference "#PWR025") (unit 1)
+        )
+      )
+      (project "PCB-Mando-Radiocontrol"
+        (path "/a09d701e-8048-4e72-8e3a-cb0f8f921380"
+          (reference "#PWR025") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "EESTN522:SW_Push") (at 80.01 31.75 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 4c63e1c9-1b6e-45d1-a05e-0997c4951d6e)
+    (property "Reference" "SW2" (at 80.01 26.035 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SW_Push" (at 80.01 33.274 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "EESTN5:Pin_Header_2" (at 80.01 26.67 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 80.01 26.67 0)
       (effects (font (size 1.27 1.27)))
     )
     (pin "1" (uuid 8df4445c-8da7-4fb5-ba45-fbb3432cab22))
     (pin "2" (uuid 27199c22-3390-4d44-9690-ce6433e49a08))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "SW2") (unit 1)
         )
@@ -12773,7 +12939,7 @@
     )
     (pin "1" (uuid 5f6dbf65-8c2e-4c49-9dfa-a2f0aa150050))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR019") (unit 1)
         )
@@ -12800,7 +12966,7 @@
     (pin "2" (uuid 0dd71efa-0e95-4766-816e-122a3ef4b2a2))
     (pin "3" (uuid f48e722e-76a6-419c-91c2-958a49ccb95d))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "U4") (unit 1)
         )
@@ -12813,24 +12979,24 @@
     )
   )
 
-  (symbol (lib_id "power:+5V") (at 76.1746 49.911 0) (unit 1)
+  (symbol (lib_id "power:+5V") (at 73.279 47.117 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5739ee85-f8b9-46e4-a8f5-382340b7e732)
-    (property "Reference" "#PWR021" (at 76.1746 53.721 0)
+    (property "Reference" "#PWR021" (at 73.279 50.927 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+5V" (at 76.1746 45.2374 0)
+    (property "Value" "+5V" (at 73.279 42.4434 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 76.1746 49.911 0)
+    (property "Footprint" "" (at 73.279 47.117 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 76.1746 49.911 0)
+    (property "Datasheet" "" (at 73.279 47.117 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 7392014d-2e7e-4873-b3c5-26164333fc96))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR021") (unit 1)
         )
@@ -12854,7 +13020,7 @@
       (effects (font (size 1.524 1.524)) hide)
     )
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "H1") (unit 1)
         )
@@ -12862,27 +13028,57 @@
     )
   )
 
-  (symbol (lib_id "EESTN522:SW_Push") (at 82.9056 51.054 0) (unit 1)
+  (symbol (lib_id "EESTN522:SW_Push") (at 80.01 48.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 597c46e1-9ef2-464d-88ba-e6111bda03aa)
-    (property "Reference" "SW3" (at 82.9056 45.339 0)
+    (property "Reference" "SW3" (at 80.01 42.545 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SW_Push" (at 82.9056 52.578 0)
+    (property "Value" "SW_Push" (at 80.01 49.784 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "EESTN5:Pin_Header_2" (at 82.9056 45.974 0)
+    (property "Footprint" "EESTN5:Pin_Header_2" (at 80.01 43.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 82.9056 45.974 0)
+    (property "Datasheet" "" (at 80.01 43.18 0)
       (effects (font (size 1.27 1.27)))
     )
     (pin "1" (uuid f8a9a1fb-54b6-4c5d-8142-41865f0fc0d9))
     (pin "2" (uuid a8ebe1ad-51e3-4279-a4f7-89681d330010))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "SW3") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 96.52 34.29 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 5bfca959-7d4e-41e8-9a4a-467ace4c5ed0)
+    (property "Reference" "#PWR023" (at 96.52 40.64 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 96.52 39.37 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 96.52 34.29 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 96.52 34.29 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4f62fd5e-b8f8-4e25-871a-725368e62528))
+    (instances
+      (project "G2_PCB_V1"
+        (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
+          (reference "#PWR023") (unit 1)
+        )
+      )
+      (project "PCB-Mando-Radiocontrol"
+        (path "/a09d701e-8048-4e72-8e3a-cb0f8f921380"
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -12905,7 +13101,7 @@
     )
     (pin "1" (uuid 47bb4865-f7c9-456a-879c-fa5d7c2eb0cc))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR010") (unit 1)
         )
@@ -12930,7 +13126,7 @@
     )
     (pin "1" (uuid 6db2627a-5017-4223-a559-5e5856e5a811))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR06") (unit 1)
         )
@@ -12955,7 +13151,7 @@
     )
     (pin "1" (uuid 06b9515e-62dd-4193-b5fd-3bfb29e7e916))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR013") (unit 1)
         )
@@ -12963,24 +13159,24 @@
     )
   )
 
-  (symbol (lib_id "power:+5V") (at 76.3778 64.1096 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "power:+5V") (at 73.279 62.357 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid 75f19df0-c2a6-4a6f-8184-569c677bbc09)
-    (property "Reference" "#PWR0102" (at 76.3778 67.9196 0)
+    (property "Reference" "#PWR0102" (at 73.279 66.167 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+5V" (at 76.3778 59.436 0)
+    (property "Value" "+5V" (at 73.279 57.6834 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 76.3778 64.1096 0)
+    (property "Footprint" "" (at 73.279 62.357 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 76.3778 64.1096 0)
+    (property "Datasheet" "" (at 73.279 62.357 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid a9556487-86df-4049-bc37-efe702c29cce))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR0102") (unit 1)
         )
@@ -13011,7 +13207,7 @@
     (pin "3" (uuid dc590a9c-530b-41ab-a6cb-42b2f186ee4c))
     (pin "4" (uuid ef5b9caa-6a60-4dea-aac2-4498dce04adb))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "P2") (unit 1)
         )
@@ -13036,7 +13232,7 @@
     )
     (pin "1" (uuid 61d75281-846c-463e-ac76-fc7bbea82c39))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR07") (unit 1)
         )
@@ -13044,24 +13240,24 @@
     )
   )
 
-  (symbol (lib_id "power:+5V") (at 76.1492 37.3888 0) (unit 1)
+  (symbol (lib_id "power:+5V") (at 73.279 30.607 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8603600b-f63d-4d72-902e-f8b2d3e3de9b)
-    (property "Reference" "#PWR020" (at 76.1492 41.1988 0)
+    (property "Reference" "#PWR020" (at 73.279 34.417 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+5V" (at 76.1492 32.7152 0)
+    (property "Value" "+5V" (at 73.279 25.9334 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 76.1492 37.3888 0)
+    (property "Footprint" "" (at 73.279 30.607 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 76.1492 37.3888 0)
+    (property "Datasheet" "" (at 73.279 30.607 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 73a7fb0a-18a7-4db2-985a-9ff9d0903ea4))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR020") (unit 1)
         )
@@ -13093,7 +13289,7 @@
     (pin "7" (uuid c94af419-a534-488c-bca5-454119c0fe98))
     (pin "8" (uuid a76aa69e-ecb6-4f28-9605-065693eaefe6))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "U3") (unit 1)
         )
@@ -13119,7 +13315,7 @@
     (pin "1" (uuid 17595261-0365-42b7-978f-0bfb4f50cdd6))
     (pin "2" (uuid e4b31026-3948-4a20-957a-89f423d11c76))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "C4") (unit 1)
         )
@@ -13149,9 +13345,39 @@
     )
     (pin "1" (uuid 78ae7ca1-da1c-48ff-9061-52fb1b16bd97))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR014") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 96.52 50.8 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid acade23f-365f-40a8-aa3a-5e5a4d746cf9)
+    (property "Reference" "#PWR026" (at 96.52 57.15 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 96.52 55.88 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 96.52 50.8 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 96.52 50.8 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid c1453ff9-96c6-4f72-9510-87598ad6db4e))
+    (instances
+      (project "G2_PCB_V1"
+        (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
+          (reference "#PWR026") (unit 1)
+        )
+      )
+      (project "PCB-Mando-Radiocontrol"
+        (path "/a09d701e-8048-4e72-8e3a-cb0f8f921380"
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -13174,7 +13400,7 @@
     )
     (pin "1" (uuid 469b7dad-b5e6-4218-9add-03b86186db1f))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR05") (unit 1)
         )
@@ -13199,7 +13425,7 @@
     )
     (pin "1" (uuid 5799aace-6e6f-4215-8ddf-426bc796866c))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR08") (unit 1)
         )
@@ -13224,7 +13450,7 @@
     )
     (pin "1" (uuid 3ba98277-d39d-4d91-a6a4-307765db9a49))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR02") (unit 1)
         )
@@ -13249,7 +13475,7 @@
     )
     (pin "1" (uuid 7ff52fa6-d4f8-44ab-bf21-18fff08635bb))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR018") (unit 1)
         )
@@ -13274,7 +13500,7 @@
     )
     (pin "1" (uuid 48211c4a-a1b9-4af9-94b2-196560f4ef38))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR015") (unit 1)
         )
@@ -13304,7 +13530,7 @@
     )
     (pin "1" (uuid 1777461d-30b4-4fa0-a255-5ae511719f25))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR016") (unit 1)
         )
@@ -13339,7 +13565,7 @@
     (pin "2" (uuid d47205a5-305d-4028-9136-1445860dee8e))
     (pin "3" (uuid 63a65485-cf58-4e57-b8c4-7f236275c4bf))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "P5") (unit 1)
         )
@@ -13347,25 +13573,25 @@
     )
   )
 
-  (symbol (lib_id "EESTN522:SW_Push") (at 83.1088 65.2526 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "EESTN522:SW_Push") (at 80.01 63.5 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid d136449c-72ef-4c20-bb11-509b67e73a45)
-    (property "Reference" "SW1" (at 83.1088 59.5376 0)
+    (property "Reference" "SW1" (at 80.01 57.785 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SW_Push" (at 83.1088 66.7766 0)
+    (property "Value" "SW_Push" (at 80.01 65.024 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "EESTN5:Pin_Header_2" (at 83.1088 60.1726 0)
+    (property "Footprint" "EESTN5:Pin_Header_2" (at 80.01 58.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 83.1088 60.1726 0)
+    (property "Datasheet" "" (at 80.01 58.42 0)
       (effects (font (size 1.27 1.27)))
     )
     (pin "1" (uuid b3de15d0-0911-4b21-bb8f-7c178b423233))
     (pin "2" (uuid 9337f788-083f-48a4-a733-22bbb447e14a))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "SW1") (unit 1)
         )
@@ -13394,9 +13620,40 @@
     (pin "1" (uuid f077c5f4-f13c-4b9f-ba71-a2ee9aec6ddf))
     (pin "2" (uuid 7fd2cd09-32bc-4325-acf4-85af238ca71b))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "P6") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "EESTN5:R") (at 92.71 31.75 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid d4c7bce0-9749-4d8d-af94-7d7b3fd934f8)
+    (property "Reference" "R3" (at 92.71 27.94 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1OK" (at 92.71 29.845 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "EESTN5:R_1206" (at 92.71 31.75 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (property "Datasheet" "" (at 92.71 31.75 0)
+      (effects (font (size 1.524 1.524)))
+    )
+    (pin "1" (uuid 2d474613-0714-4bac-b427-9fccc882a4b6))
+    (pin "2" (uuid 8a16bba2-3f53-476d-9452-955a24ce0c23))
+    (instances
+      (project "G2_PCB_V1"
+        (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
+          (reference "R3") (unit 1)
+        )
+      )
+      (project "Esp32Modulo"
+        (path "/d8ce7d9a-219e-40d1-b957-d72bdccbdc30"
+          (reference "R3") (unit 1)
         )
       )
     )
@@ -13425,7 +13682,7 @@
     (pin "3" (uuid 6862d3f0-79ab-4fee-8b75-dd388da49ff7))
     (pin "4" (uuid b7c6c2c3-7249-4462-b514-828be8cefdd2))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "P1") (unit 1)
         )
@@ -13455,7 +13712,7 @@
     (pin "5" (uuid 5f875bb0-afb6-480b-af55-c23988df27a9))
     (pin "6" (uuid a54339d6-c18b-49b6-a2e1-6479903c686a))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "P7") (unit 1)
         )
@@ -13481,7 +13738,7 @@
     (pin "1" (uuid 569c76e1-740f-458e-bc6d-e674420ef65e))
     (pin "2" (uuid caf27eb2-29c1-4c3a-a707-4e9d34c27ab3))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "C3") (unit 1)
         )
@@ -13511,7 +13768,7 @@
     )
     (pin "1" (uuid 571d07e6-59b1-443f-be90-2f9a2aaf01d9))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR0111") (unit 1)
         )
@@ -13536,9 +13793,40 @@
     )
     (pin "1" (uuid 994d0815-4d49-4480-8a9f-958313eb09bb))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR022") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "EESTN5:R") (at 92.71 48.26 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid ebdd67a6-e69d-44e8-ac75-033271a6d6a6)
+    (property "Reference" "R2" (at 92.71 44.45 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1OK" (at 92.71 46.355 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "EESTN5:R_1206" (at 92.71 48.26 0)
+      (effects (font (size 1.524 1.524)) hide)
+    )
+    (property "Datasheet" "" (at 92.71 48.26 0)
+      (effects (font (size 1.524 1.524)))
+    )
+    (pin "1" (uuid ddd24eb2-d056-4e2b-abbe-505137963fad))
+    (pin "2" (uuid 1e82ac2d-a35e-4f6d-9472-f97bbc42f0d2))
+    (instances
+      (project "G2_PCB_V1"
+        (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
+          (reference "R2") (unit 1)
+        )
+      )
+      (project "Esp32Modulo"
+        (path "/d8ce7d9a-219e-40d1-b957-d72bdccbdc30"
+          (reference "R3") (unit 1)
         )
       )
     )
@@ -13561,7 +13849,7 @@
     )
     (pin "1" (uuid de5f9518-e54f-4c4c-bb46-107a992da922))
     (instances
-      (project "BoverOrigin"
+      (project "G2_PCB_V1"
         (path "/6a336e3f-79e9-4231-8ca2-38a798f05f9f"
           (reference "#PWR03") (unit 1)
         )
