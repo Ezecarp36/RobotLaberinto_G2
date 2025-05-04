@@ -49,9 +49,11 @@ Sharp_GP2Y0A02::Sharp_GP2Y0A02(int pin)
 double Sharp_GP2Y0A02::SensorRead()
 {
     float adc = AnalogReading(sensorPin);
-    if (adc > 2700 ) adc = 2700;
-    if(adc < 500 ) adc = 500;
-    float distance = 10650.08*(pow(adc , -0.74999))+1; //254000 *(pow( adc , -1.2134));
+    if (adc > 2700)
+        adc = 2700;
+    if (adc < 500)
+        adc = 500;
+    float distance = 10650.08 * (pow(adc, -0.74999)) + 1; // 254000 *(pow( adc , -1.2134));
     delay(100);
     return distance;
 }
@@ -76,4 +78,49 @@ double Ultrasound::SensorRead()
     pulse = pulseIn(pinEcho, HIGH);
     distance = pulse / 58.2;
     return distance;
+}
+
+VL53L0X_Sensor::VL53L0X_Sensor(int xshutPin, uint8_t address)
+{
+    i2cAddress = address;
+    xshutPin = xshutPin;
+    errorFlag = false;
+
+    pinMode(xshutPin, OUTPUT);
+    digitalWrite(xshutPin, LOW);
+    delay(10);
+    digitalWrite(xshutPin, HIGH);
+    delay(10);
+
+    if (!lox.begin(address, false, &Wire))
+        errorFlag = true;
+}
+
+double VL53L0X_Sensor::SensorRead()
+{
+    VL53L0X_RangingMeasurementData_t measure;
+    lox.rangingTest(&measure, false);
+
+    if (measure.RangeStatus != 4)
+        return measure.RangeMilliMeter;
+
+    else
+        return -1; // Indica error
+}
+
+bool VL53L0X_Sensor::GetErrorFlag()
+{
+    return errorFlag;
+}
+
+void VL53L0X_Sensor::SensorOff()
+{
+    digitalWrite(xshutPin, LOW);
+    delay(10);
+}
+
+void VL53L0X_Sensor::SensorOn()
+{
+    digitalWrite(xshutPin, HIGH);
+    delay(10);
 }

@@ -19,5 +19,6 @@ void loop() {
   {
     Serial.print("Distance: ");
     Serial.println(distance);
+    currentTime = millis();
   }
 }

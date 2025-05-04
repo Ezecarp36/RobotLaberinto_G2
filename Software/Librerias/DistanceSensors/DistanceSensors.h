@@ -1,13 +1,17 @@
 #ifndef _SHARP_H
 #define _SHARP_H
 #include "Arduino.h"
+#include <Adafruit_VL53L0X.h>
 
 class Isensor
 {
 public:
     Isensor() = default;
-    virtual double SensorRead();
     float AnalogReading(int pin);
+    virtual double SensorRead();
+    virtual void SensorOn() {}
+    virtual void SensorOff() {}
+    virtual bool GetErrorFlag() { return false; }
 };
 
 class Sharp_GP2Y0A60S : public Isensor
@@ -49,6 +53,22 @@ private:
 public:
     Ultrasound(int trig, int echo);
     double SensorRead();
+};
+
+class VL53L0X_Sensor : public Isensor
+{
+private:
+    Adafruit_VL53L0X lox;
+    uint8_t i2cAddress;
+    int xshutPin;
+    bool errorFlag;
+
+public:
+    VL53L0X_Sensor(int xshutPin, uint8_t address = 0x29);
+    double SensorRead();
+    bool GetErrorFlag();
+    void SensorOn();
+    void SensorOff();
 };
 
 #endif

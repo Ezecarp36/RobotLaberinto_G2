@@ -304,6 +304,5 @@ void setup()
 void loop() 
 {
   movementLogic();
-  printAll();
   
 }
