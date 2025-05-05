@@ -1,6 +1,6 @@
 #ifndef _ENGINE_CONTROLLER_H
 #define _ENGINE_CONTROLLER_H
-#include "arduino.h"
+#include "Arduino.h"
 
 class IEngine
 {

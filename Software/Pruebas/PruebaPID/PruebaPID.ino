@@ -12,7 +12,7 @@ BluetoothSerial SerialBT;
 
 //debug
 #define DEBUG 1
-#define TICK_DEBUG 500
+#define TICK_DEBUG 1000
 unsigned long currentTimePID = 0;
 unsigned long currentTimeSensors = 0;
 
@@ -26,16 +26,17 @@ unsigned long currentTimeSensors = 0;
 #define PWM_CHANNEL_LEFT_IN1 3
 #define PWM_CHANNEL_LEFT_IN2 4
 
-//Ultrasonidos
-#define PIN_ECHO_FRONT  32
-#define PIN_TRIGG_FRONT 39
-#define PIN_ECHO_RIGHT  25
-#define PIN_TRIGG_RIGHT 35
-#define PIN_ECHO_LEFT  33
-#define PIN_TRIGG_LEFT 34
-float frontDistance;
-float rightDistance;
-float leftDistance;
+//Sensores VL53L0X
+#define PIN_XSHUT_SENSOR_FRONT 13
+#define I2C_ADDRESS_SENSOR_FRONT 0x29
+#define PIN_XSHUT_SENSOR_RIGHT 14
+#define I2C_ADDRESS_SENSOR_RIGHT 0x30
+#define PIN_XSHUT_SENSOR_LEFT 15
+#define I2C_ADDRESS_SENSOR_LEFT 0x31
+
+double frontDistance;
+double rightDistance;
+double leftDistance;
 
 //veocidades motores pwm
 int speedRight = 200;
@@ -60,18 +61,18 @@ bool start;
 IEngine *rightEngine = new Driver_DRV8825(PIN_RIGHT_ENGINE_IN1, PIN_RIGHT_ENGINE_IN2, PWM_CHANNEL_RIGHT_IN1, PWM_CHANNEL_RIGHT_IN2);
 IEngine *leftEngine = new Driver_DRV8825(PIN_LEFT_ENGINE_IN1, PIN_LEFT_ENGINE_IN2, PWM_CHANNEL_LEFT_IN1, PWM_CHANNEL_LEFT_IN2);
 EngineController *robot = new EngineController(rightEngine, leftEngine);
-Isensor *FrontUltrasound = new Ultrasound(PIN_TRIGG_FRONT, PIN_ECHO_FRONT);
-Isensor *RightUltrasound = new Ultrasound(PIN_TRIGG_RIGHT, PIN_ECHO_RIGHT);
-Isensor *LeftUltrasound = new Ultrasound(PIN_TRIGG_LEFT, PIN_ECHO_LEFT);
+//Isensor *FrontVL53L0X = new VL53L0X_Sensor(PIN_XSHUT_SENSOR_FRONT, I2C_ADDRESS_SENSOR_FRONT);
+Isensor *RightVL53L0X = new VL53L0X_Sensor(PIN_XSHUT_SENSOR_RIGHT, I2C_ADDRESS_SENSOR_RIGHT);
+Isensor *LeftVL53L0X = new VL53L0X_Sensor(I2C_ADDRESS_SENSOR_LEFT, I2C_ADDRESS_SENSOR_LEFT);
 Button *buttonStart = new Button(PIN_BUTTON_START);
 Button *buttonSwtich = new Button(PIN_BUTTON_SWITCH);
 Pid *PID = new Pid(kp, kd, ki, setPoint, TICK_PID);
 
 void SensorsReading()
 {
-  frontDistance = FrontUltrasound->SensorRead();
-  rightDistance = RightUltrasound->SensorRead();
-  leftDistance = LeftUltrasound->SensorRead();
+  //frontDistance = FrontVL53L0X->SensorRead();
+  rightDistance = RightVL53L0X->SensorRead();
+  leftDistance = LeftVL53L0X->SensorRead();
 }
 
 void printPID()
@@ -102,10 +103,19 @@ void PrintSensors()
   }
 }
 
+void CheckSensors()
+{
+  //if(FrontVL53L0X->GetErrorFlag()) SerialBT.println("Fallo al inicializar el sensor Frontal");
+  if(RightVL53L0X->GetErrorFlag()) SerialBT.println("Fallo al inicializar el sensor derecho");
+  if(LeftVL53L0X->GetErrorFlag()) SerialBT.println("Fallo al inicializar el sensor izquierdo");
+}
+
 
 
 void setup() {
   SerialBT.begin("G2");
+  Wire.begin();
+  CheckSensors();
 }
 
 void loop() {
@@ -132,7 +142,7 @@ void loop() {
     else if (command == 'K') 
     {
       String kpValue = SerialBT.readStringUntil('\n');
-      kp = kpValue.toFloat(); // Convertir la cadena a un valor flotante y asignarlo a kd
+      kp = kpValue.toFloat(); // Convertir la cadena a un valor flotante y asignarlo a kp
       PID->SetKp(kp);
       SerialBT.print("Kp: ");
       SerialBT.println(kp);
