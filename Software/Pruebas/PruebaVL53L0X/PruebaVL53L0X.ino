@@ -23,7 +23,14 @@ BluetoothSerial SerialBT;
 
 Isensor *FrontVL53L0X = new VL53L0X_Sensor(PIN_XSHUT_SENSOR_FRONT, I2C_ADDRESS_SENSOR_FRONT);
 Isensor *RightVL53L0X = new VL53L0X_Sensor(PIN_XSHUT_SENSOR_RIGHT, I2C_ADDRESS_SENSOR_RIGHT);
-Isensor *LeftVL53L0X = new VL53L0X_Sensor(I2C_ADDRESS_SENSOR_LEFT, I2C_ADDRESS_SENSOR_LEFT);
+Isensor *LeftVL53L0X = new VL53L0X_Sensor(PIN_XSHUT_SENSOR_LEFT, I2C_ADDRESS_SENSOR_LEFT);
+
+void InitSensors()
+{
+  bool error_front = FrontVL53L0X->SensorInit();
+  bool error_right = RightVL53L0X->SensorInit();
+  bool error_left = LeftVL53L0X->SensorInit();
+}
 
 void SensorsReading()
 {
@@ -55,6 +62,7 @@ void CheckSensors()
 void setup() {
   SerialBT.begin("G2");
   Wire.begin();
+  InitSensors();
   CheckSensors();
 }
 

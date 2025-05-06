@@ -8,7 +8,8 @@ class Isensor
 public:
     Isensor() = default;
     float AnalogReading(int pin);
-    virtual double SensorRead();
+    virtual bool SensorInit() {}
+    virtual double SensorRead() { return 0; }
     virtual void SensorOn() {}
     virtual void SensorOff() {}
     virtual bool GetErrorFlag() { return false; }

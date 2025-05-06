@@ -89,11 +89,14 @@ VL53L0X_Sensor::VL53L0X_Sensor(int xshutPin, uint8_t address)
     pinMode(xshutPin, OUTPUT);
     digitalWrite(xshutPin, LOW);
     delay(10);
+}
+
+bool VL53L0X_Sensor::SensorInit()
+{
     digitalWrite(xshutPin, HIGH);
     delay(10);
-
-    if (!lox.begin(address, false, &Wire))
-        errorFlag = true;
+    errorFlag = lox.begin(address, false, &Wire):
+    return errorFlag;
 }
 
 double VL53L0X_Sensor::SensorRead()
