@@ -68,6 +68,7 @@ public:
     VL53L0X_Sensor(int xshutPin, uint8_t address = 0x29);
     double SensorRead();
     bool GetErrorFlag();
+    bool SensorInit();
     void SensorOn();
     void SensorOff();
 };

@@ -89,13 +89,14 @@ VL53L0X_Sensor::VL53L0X_Sensor(int xshutPin, uint8_t address)
     pinMode(xshutPin, OUTPUT);
     digitalWrite(xshutPin, LOW);
     delay(10);
+    SensorInit();
 }
 
 bool VL53L0X_Sensor::SensorInit()
 {
     digitalWrite(xshutPin, HIGH);
     delay(10);
-    errorFlag = lox.begin(address, false, &Wire):
+    errorFlag = lox.begin(i2cAddress, false, &Wire);
     return errorFlag;
 }
 
