@@ -8,28 +8,48 @@ Driver_DRV8825::Driver_DRV8825(int pinA, int pinB, int chA, int chB)
     channelB = chB;
     pinMode(pinPwmA, OUTPUT);
     pinMode(pinPwmB, OUTPUT);
-    ledcSetup(channelA, frequency, resolution);
-    ledcSetup(channelB, frequency, resolution);
-    ledcAttachPin(pinPwmA, channelA);
-    ledcAttachPin(pinPwmB, channelB);
+    #if !defined() || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+     bool status_ch_a = ledcAttachChannel(pinPwmA, frequency, resolution, channelA);
+     bool status_ch_b = ledcAttachChannel(pinPwmB, frequency, resolution, channelB);
+    #else 
+        ledcSetup(channelA, frequency, resolution);
+        ledcSetup(channelB, frequency, resolution);
+        ledcAttachPin(pinPwmA, channelA);
+        ledcAttachPin(pinPwmB, channelB);
+    #endif
 }
 
 void Driver_DRV8825::Forward()
 {
-    ledcWrite(channelA, speed);
-    ledcWrite(channelB, 0);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcWriteChannel(channelA, speed);
+        ledcWriteChannel(channelB, 0);
+    #else
+        ledcWrite(channelA, speed);
+        ledcWrite(channelB, 0);
+    #endif
 }
 
 void Driver_DRV8825::Backward()
 {
-    ledcWrite(channelA, 0);
-    ledcWrite(channelB, speed);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcWriteChannel(channelA, 0);
+        ledcWriteChannel(channelB, speed);
+    #else
+        ledcWrite(channelA, 0);
+        ledcWrite(channelB, speed);
+    #endif
 }
 
 void Driver_DRV8825::Stop()
 {
-    ledcWrite(channelA, 0);
-    ledcWrite(channelB, 0);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcWriteChannel(channelA, 0);
+        ledcWriteChannel(channelB, 0);
+    #else
+        ledcWrite(channelA, 0);
+        ledcWrite(channelB, 0);
+    #endif
 }
 
 void Driver_DRV8825::SetSpeed(int sp)
@@ -44,26 +64,42 @@ Driver_G2_18V17::Driver_G2_18V17(int dir, int pwm, int ch)
     channel = ch;
     pinMode(pinDir, OUTPUT);
     pinMode(pinPwm, OUTPUT);
-    ledcSetup(channel, frequency, resolution);
-    ledcAttachPin(pinPwm, channel);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcAttachChannel(pinPwm, frequency, resolution, channel);
+    #else
+        ledcSetup(channel, frequency, resolution);
+        ledcAttachPin(pinPwm, channel);
+    #endif
 }
 
 void Driver_G2_18V17::Forward()
 {
     digitalWrite(pinDir, 1);
-    ledcWrite(channel, speed);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcWriteChannel(channel, speed);
+    #else
+        ledcWrite(channel, speed);
+    #endif
 }
 
 void Driver_G2_18V17::Backward()
 {
     digitalWrite(pinDir, 0);
-    ledcWrite(channel, speed);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcWriteChannel(channel, speed);
+    #else
+        ledcWrite(channel, speed);
+    #endif
 }
 
 void Driver_G2_18V17::Stop()
 {
     digitalWrite(pinDir, 0);
-    ledcWrite(channel, 0);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcWriteChannel(channel, speed);
+    #else
+        ledcWrite(channel, speed);
+    #endif
 }
 
 void Driver_G2_18V17::SetSpeed(int sp)
@@ -77,29 +113,46 @@ Driver_LN298N::Driver_LN298N(int in1, int in2, int ena, int ch)
     pinB = in2;
     pinPwm = ena;
     channel = ch;
-    ledcSetup(channel, frequency, resolution);
-    ledcAttachPin(pinPwm, channel);
+    
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcAttachChannel(pinPwm, frequency, resolution, channel);
+    #else
+        ledcSetup(channel, frequency, resolution);
+        ledcAttachPin(pinPwm, channel);
+    #endif
 }
 
 void Driver_LN298N::Forward()
 {
     digitalWrite(pinA, 1);
     digitalWrite(pinA, 0);
-    ledcWrite(channel, speed);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcWriteChannel(channel, speed);
+    #else
+        ledcWrite(channel, speed);
+    #endif
 }
 
 void Driver_LN298N::Backward()
 {
     digitalWrite(pinA, 0);
     digitalWrite(pinA, 1);
-    ledcWrite(channel, speed);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcWriteChannel(channel, speed);
+    #else
+        ledcWrite(channel, speed);
+    #endif
 }
 
 void Driver_LN298N::Stop()
 {
     digitalWrite(pinA, 0);
     digitalWrite(pinA, 0);
-    ledcWrite(channel, 0);
+    #if !defined(ARDUINO_ESP32_MAJOR_VERSION) || (ARDUINO_ESP32_MAJOR_VERSION >= 3)
+        ledcWriteChannel(channel, 0);
+    #else
+        ledcWrite(channel, 0);
+    #endif
 }
 
 void Driver_LN298N::SetSpeed(int sp)
