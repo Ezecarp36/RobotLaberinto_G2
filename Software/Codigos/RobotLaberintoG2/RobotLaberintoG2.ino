@@ -294,7 +294,7 @@ void printAll()
     if (DEBUG_SENSORS) printSensors();
     if (DEBUG_PID) printPID();
     if (DEBUG_STATUS) printStatus();
-    if()
+    // if()
 }
 void setup() 
 {

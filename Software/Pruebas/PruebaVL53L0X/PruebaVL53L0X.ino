@@ -62,7 +62,7 @@ void CheckSensors()
 void setup() {
   SerialBT.begin("G2");
   Wire.begin();
-  InitSensors();
+  // InitSensors();
   CheckSensors();
 }
 
