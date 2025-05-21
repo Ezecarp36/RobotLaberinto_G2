@@ -82,22 +82,21 @@ double Ultrasound::SensorRead()
 
 VL53L0X_Sensor::VL53L0X_Sensor(int xshutPin, uint8_t address)
 {
-    i2cAddress = address;
-    xshutPin = xshutPin;
-    errorFlag = false;
+    this->i2cAddress = address;
+    this->xshutPin = xshutPin;
+    this->errorFlag = false;
 
-    pinMode(xshutPin, OUTPUT);
-    digitalWrite(xshutPin, LOW);
-    delay(10);
-    SensorInit();
+    // pinMode(this->xshutPin, OUTPUT);
+    // digitalWrite(this->xshutPin, LOW);
+    // delay(100);
 }
 
 bool VL53L0X_Sensor::SensorInit()
 {
-    digitalWrite(xshutPin, HIGH);
-    delay(10);
-    errorFlag = lox.begin(i2cAddress, false, &Wire);
-    return errorFlag;
+    digitalWrite(this->xshutPin, HIGH);
+    delay(20);
+    this->errorFlag = lox.begin(this->i2cAddress, false, &Wire);
+    return this->errorFlag;
 }
 
 double VL53L0X_Sensor::SensorRead()
@@ -114,17 +113,17 @@ double VL53L0X_Sensor::SensorRead()
 
 bool VL53L0X_Sensor::GetErrorFlag()
 {
-    return errorFlag;
+    return this->errorFlag;
 }
 
 void VL53L0X_Sensor::SensorOff()
 {
-    digitalWrite(xshutPin, LOW);
+    digitalWrite(this->xshutPin, LOW);
     delay(10);
 }
 
 void VL53L0X_Sensor::SensorOn()
 {
-    digitalWrite(xshutPin, HIGH);
+    digitalWrite(this->xshutPin, HIGH);
     delay(10);
 }
