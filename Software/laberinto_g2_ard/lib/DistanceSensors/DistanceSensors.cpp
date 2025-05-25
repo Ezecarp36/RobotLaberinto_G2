@@ -88,6 +88,7 @@ VL53L0X_Sensor::VL53L0X_Sensor(int xshutPin, uint8_t address)
 
     pinMode(this->xshutPin, OUTPUT);
     digitalWrite(this->xshutPin, LOW);
+    // this->SensorInit();
 }
 
 bool VL53L0X_Sensor::SensorInit()
